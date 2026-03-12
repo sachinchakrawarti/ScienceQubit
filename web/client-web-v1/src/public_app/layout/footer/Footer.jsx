@@ -1,7 +1,7 @@
 import React from "react";
 import {
   BiAtom,
-  BiFlask,
+  BiSolidFlask, // Changed from BiFlask to BiSolidFlask
   BiDna,
   BiMath,
   BiPlanet,
@@ -40,7 +40,7 @@ const Footer = () => {
   const scienceCategories = [
     { name: "Mathematics", icon: <BiMath />, href: "#" },
     { name: "Biology", icon: <BiDna />, href: "#" },
-    { name: "Chemistry", icon: <BiFlask />, href: "#" },
+    { name: "Chemistry", icon: <BiSolidFlask />, href: "#" }, // Changed here
     { name: "Physics", icon: <BiAtom />, href: "#" },
     { name: "Astronomy", icon: <BiPlanet />, href: "#" },
     { name: "Sexology", icon: <BiHeart />, href: "#" },
