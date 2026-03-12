@@ -1,7 +1,8 @@
-// src\public_app\layout\navbar\components\NavbarData.jsx
+// src\public_app\layout\navbar\navbardesktop\NavbarDesktopData.js
 import {
   FaAtom,
   FaFlask,
+   FaChevronDown,
   FaDna,
   FaSquareRootAlt,
   FaGlobeAmericas,
@@ -21,33 +22,31 @@ import {
   FaVial,
   FaFire,
   FaWind,
-  FaWater,
   FaTree,
   FaDog,
-  FaCat,
   FaQuestionCircle,
   FaInfoCircle,
   FaBlog,
   FaNewspaper,
   FaPhone,
   FaEnvelope,
-  FaMapMarkerAlt,
-  FaRegSun,
-  FaRegMoon,
-  FaMeteor,
   FaSatellite,
   FaSpaceShuttle,
-  FaSun,
-  FaMoon,
-  FaCloud,
-  FaBolt,
-  FaEgg,
-  FaFish,
-  FaPaw,
+  FaMeteor,
   FaSeedling,
+  FaFish,
+  FaBolt,
+  FaSun,
+  FaGraduationCap,
 } from "react-icons/fa";
 
-export const scienceCategories = [
+export const navItems = [
+  {
+    label: "Home",
+    to: "/",
+    icon: FaGraduationCap,
+    color: "text-blue-600",
+  },
   {
     label: "Mathematics",
     to: "/mathematics",
@@ -59,11 +58,7 @@ export const scienceCategories = [
       { label: "Geometry", to: "/mathematics/geometry", icon: FaDragon },
       { label: "Statistics", to: "/mathematics/statistics", icon: FaChartLine },
       { label: "Trigonometry", to: "/mathematics/trigonometry", icon: FaStar },
-      {
-        label: "Number Theory",
-        to: "/mathematics/number-theory",
-        icon: FaStar,
-      },
+      { label: "Number Theory", to: "/mathematics/number-theory", icon: FaStar },
     ],
   },
   {
@@ -72,11 +67,7 @@ export const scienceCategories = [
     icon: FaDna,
     color: "text-green-500",
     dropdown: [
-      {
-        label: "Cell Biology",
-        to: "/biology/cell-biology",
-        icon: FaMicroscope,
-      },
+      { label: "Cell Biology", to: "/biology/cell-biology", icon: FaMicroscope },
       { label: "Genetics", to: "/biology/genetics", icon: FaDna },
       { label: "Ecology", to: "/biology/ecology", icon: FaLeaf },
       { label: "Neuroscience", to: "/biology/neuroscience", icon: FaBrain },
@@ -93,18 +84,10 @@ export const scienceCategories = [
     color: "text-purple-500",
     dropdown: [
       { label: "Organic Chemistry", to: "/chemistry/organic", icon: FaLeaf },
-      {
-        label: "Inorganic Chemistry",
-        to: "/chemistry/inorganic",
-        icon: FaVial,
-      },
+      { label: "Inorganic Chemistry", to: "/chemistry/inorganic", icon: FaVial },
       { label: "Physical Chemistry", to: "/chemistry/physical", icon: FaFire },
       { label: "Biochemistry", to: "/chemistry/biochemistry", icon: FaDna },
-      {
-        label: "Analytical Chemistry",
-        to: "/chemistry/analytical",
-        icon: FaMicroscope,
-      },
+      { label: "Analytical Chemistry", to: "/chemistry/analytical", icon: FaMicroscope },
       { label: "Polymer Chemistry", to: "/chemistry/polymer", icon: FaDragon },
     ],
   },
@@ -118,11 +101,7 @@ export const scienceCategories = [
       { label: "Quantum Physics", to: "/physics/quantum", icon: FaAtom },
       { label: "Relativity", to: "/physics/relativity", icon: FaSun },
       { label: "Thermodynamics", to: "/physics/thermodynamics", icon: FaFire },
-      {
-        label: "Electromagnetism",
-        to: "/physics/electromagnetism",
-        icon: FaBolt,
-      },
+      { label: "Electromagnetism", to: "/physics/electromagnetism", icon: FaBolt },
       { label: "Nuclear Physics", to: "/physics/nuclear", icon: FaStar },
       { label: "Optics", to: "/physics/optics", icon: FaSun },
     ],
@@ -137,11 +116,7 @@ export const scienceCategories = [
       { label: "Planets", to: "/astronomy/planets", icon: FaGlobeAmericas },
       { label: "Galaxies", to: "/astronomy/galaxies", icon: FaSun },
       { label: "Cosmology", to: "/astronomy/cosmology", icon: FaSpaceShuttle },
-      {
-        label: "Observational Astronomy",
-        to: "/astronomy/observational",
-        icon: FaSatellite,
-      },
+      { label: "Observational Astronomy", to: "/astronomy/observational", icon: FaSatellite },
       { label: "Astrophysics", to: "/astronomy/astrophysics", icon: FaMeteor },
       { label: "Solar System", to: "/astronomy/solar-system", icon: FaSun },
     ],
@@ -152,11 +127,7 @@ export const scienceCategories = [
     icon: FaHeart,
     color: "text-pink-500",
     dropdown: [
-      {
-        label: "Human Sexuality",
-        to: "/sexology/human-sexuality",
-        icon: FaHeart,
-      },
+      { label: "Human Sexuality", to: "/sexology/human-sexuality", icon: FaHeart },
       { label: "Sexual Health", to: "/sexology/sexual-health", icon: FaHeart },
       { label: "Psychology", to: "/sexology/psychology", icon: FaBrain },
       { label: "Education", to: "/sexology/education", icon: FaBook },
@@ -165,40 +136,13 @@ export const scienceCategories = [
       { label: "Sociology", to: "/sexology/sociology", icon: FaUserGraduate },
     ],
   },
-];
 
-export const resourcesLinks = [
-  { label: "Articles", to: "/articles", icon: FaNewspaper },
-  { label: "Research Papers", to: "/research", icon: FaMicroscope },
-  { label: "Video Lectures", to: "/videos", icon: FaChalkboardTeacher },
-  { label: "Interactive Labs", to: "/labs", icon: FaFlask },
-  { label: "Quizzes", to: "/quizzes", icon: FaQuestionCircle },
-  { label: "Courses", to: "/courses", icon: FaBook },
-  { label: "Textbooks", to: "/textbooks", icon: FaBook },
-];
-
-export const communityLinks = [
-  { label: "Scientists", to: "/scientists", icon: FaUserGraduate },
-  { label: "Researchers", to: "/researchers", icon: FaMicroscope },
-  { label: "Educators", to: "/educators", icon: FaChalkboardTeacher },
-  { label: "Students", to: "/students", icon: FaUserGraduate },
-  { label: "Forum", to: "/forum", icon: FaBook },
-  { label: "Events", to: "/events", icon: FaStar },
-];
-
-export const aboutLinks = [
-  { label: "About Us", to: "/about", icon: FaInfoCircle },
-  { label: "Blog", to: "/blog", icon: FaBlog },
-  { label: "Contact", to: "/contact", icon: FaPhone },
-  { label: "FAQ", to: "/faq", icon: FaQuestionCircle },
-  { label: "Careers", to: "/careers", icon: FaRocket },
-  { label: "Press", to: "/press", icon: FaNewspaper },
-];
-
-export const userMenuItems = [
-  { label: "My Profile", to: "/profile", icon: FaUserGraduate },
-  { label: "My Learning", to: "/my-learning", icon: FaBook },
-  { label: "Saved Articles", to: "/saved", icon: FaStar },
-  { label: "Settings", to: "/settings", icon: FaAtom },
-  { label: "Logout", to: "/logout", icon: FaHeart, danger: true },
+ 
+  {
+    label: "About",
+    to: "/about",
+    icon: FaInfoCircle,
+    color: "text-gray-600",
+ 
+  },
 ];
